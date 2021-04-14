@@ -1,0 +1,31 @@
+@mixin pseudo($display: block, $position: absolute, $content: '') {
+   content: $content;
+   display: $display;
+   position: $position;
+}
+
+@mixin flex-center($direction: row) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin cover-background {
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+@mixin fade($type, $time: .3s) {
+   
+   @if $type == "hide" {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility $time, opacity $time;
+   } @else if $type == "show" {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility $time, opacity $time;
+   }
+}
